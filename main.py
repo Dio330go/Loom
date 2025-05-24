@@ -8,8 +8,11 @@ class Date:
         self.month = month
         self.year = year
 
+    def __repr__(self):
+        return f"{self.year}{self.month:02d}{self.day:02d}{self.hour:02d}{self.minute:02d}"
+    
     def __str__(self):
-        return f"{self.hour:02d}:{self.minute:02d} {self.day:02d}/{self.month:02d}/{self.year}"
+        return f"{self.hour:02d}:{self.minute:02d} de {self.day:02d}/{self.month:02d}/{self.year}"
 
 class Appointment:
     def __init__(self, name: str, date: Date):
@@ -18,12 +21,18 @@ class Appointment:
 
     def __str__(self):
         return f"Tens de ir {self.name} às {str(self.date)}"
+   
+def date_size(appointment:Appointment):
+    return int(repr(appointment.date))
+    
+appointments = [
+    Appointment("Urologista", Date(23, 5, 3, 5, 2025)), 
+    Appointment("Putas", Date(0, 0, 13, 12, 2025)),
+    Appointment("Derrubar Império Romano", Date(13, 0, 1, 1, 2032)),
+    Appointment("fazer sexo com o mesquita", Date(22, 0, 24, 5, 2025))
+]
 
-appointments = {
-    1: Appointment("Urologista", Date(23, 5, 3, 5, 2025)), 
-    2: Appointment("Putas", Date(0, 0, 13, 12, 2025)),
-    3: Appointment("Derrubar Império Romano", Date(13, 0, 1, 1, 2032))
-}
+appointments.sort(key=date_size)
 
 app = FastAPI()
 
@@ -38,3 +47,9 @@ def see_appointments():
 @app.get("/appointments/{appointment_id}")
 def see_appointment(appointment_id: int):
     return str(appointments[appointment_id])
+
+
+#  ⠀⠖⠖⡆⠀⠀⠀⠀⣀⣀⣀⠀⠀
+#  ⢸⠀⠀⡗⠐⠉⠁⠀⠀⣇⡤⠽⡆
+#  ⠀⢉⡟⠳⡄⠀⠀⠀⢀⣇⣀⡴⠃
+#  ⠀⡏⠀⠀⡸⠉⠉⠉⠁⠀⠀⠀⠀ M + D
