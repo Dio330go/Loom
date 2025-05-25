@@ -15,6 +15,7 @@ function submit() {
   if (name !== "" && date !== "") {
     document.getElementById('name').value = '';
     document.getElementById('date').value = '';
+    document.getElementById('notes').value = '';
     document.getElementById('submit_confirmation').innerHTML = 'o teu apointment ja ta bue guardado';
     document.getElementById('submit_confirmation').style.color = '#1c9c3e';
     store_values()
