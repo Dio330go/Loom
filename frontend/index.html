@@ -9,7 +9,8 @@
   </head>
   <body>
     <div id="header">
-      <p>// appointments</p>    
+      <p>// appointments</p> 
+      <button onclick="open_new_appointment()" id="open_new_appointment">+</button>   
     </div>
     <div id="appointments">
       <div class="appointment"><p>appointment 1</p></div>
@@ -18,7 +19,10 @@
       <div class="appointment"><p>appointment 4</p></div>
     </div> 
     <div id="new_appointment">
-      <h1>// novo appointment</h1>
+      <div id="header_new_appointment">
+        <h1>// novo appointment</h1>
+        <button onclick="close_new_appointment()" id="close_new_appointment">x</button>
+      </div>
       <div>
         <textarea id="name" maxlength="50" placeholder="nome aqui"></textarea>
         <input id="date" type="datetime-local"></input>

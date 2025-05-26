@@ -5,7 +5,9 @@ body{
   background-color: #2a292e;
   padding: 25px;
 }
-#header{
+#header {
+  display: flex;
+  align-items: center; /* Align children vertically */
   font-size: 150%;
   padding-left: 50px;
   position: fixed;
@@ -13,14 +15,31 @@ body{
   left: 0;
   width: 100%;
   background-color: #18181a;
-  color:#27b20d;
+  color: #27b20d;
+
+}
+
+#open_new_appointment {
+  padding: 5px 10px; /* Adjust padding for better spacing */
+  margin-left: 20px; /* Optional spacing from paragraph */
+  line-height: 1;
+
+}
+#close_new_appointment{
+  padding: 5px 10px; /* Adjust padding for better spacing */
+  margin-left: 20px; /* Optional spacing from paragraph */
+  line-height: 1;
 }
 #appointments{
   background-color: #2a292e;
+  margin-top: 70px;
 }
 .appointment{
+  display: inline-block;
+  margin-block: 10px;
   background-color: #2a292e;
-  width: 500px;
+  width: 200px;
+  height: 200px;
   padding-inline: 10px;
   padding-block: 3px;
   border: 2px solid #595766;
@@ -28,13 +47,18 @@ body{
   color:#27b20d;
 }
 #new_appointment{
-  margin-top: 70px;
+  display: none;
+  align-items: center;
   background-color: #2a292e;
   width: 500px;
   padding-inline: 10px;
   padding-block: 3px;
   border: 2px solid #595766;
   border-radius: 4px;
+}
+#header_new_appointment{
+  display: flex;
+  align-items: center;
 }
 h1 {
 	color: #27b20d;
@@ -99,12 +123,7 @@ button:active{
   scale: 95%;
   background-color: green
 }
-p{
+#submit_confirmation{
   opacity: 1;
   transition-delay: 3s;
 } 
-
-pre{
-  padding: 30px;
-  color: #27b20d
-}
