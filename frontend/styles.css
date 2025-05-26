@@ -3,13 +3,44 @@
 }
 body{
   background-color: #2a292e;
-  padding: 25px;	
+  padding: 25px;
+}
+#header{
+  font-size: 150%;
+  padding-left: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #18181a;
+  color:#27b20d;
+}
+#appointments{
+  background-color: #2a292e;
+}
+.appointment{
+  background-color: #2a292e;
+  width: 500px;
+  padding-inline: 10px;
+  padding-block: 3px;
+  border: 2px solid #595766;
+  border-radius: 4px;
+  color:#27b20d;
+}
+#new_appointment{
+  margin-top: 70px;
+  background-color: #2a292e;
+  width: 500px;
+  padding-inline: 10px;
+  padding-block: 3px;
+  border: 2px solid #595766;
+  border-radius: 4px;
 }
 h1 {
 	color: #27b20d;
 	font-size: 150%;
 }
-input{
+#name {
   background-color: #474552;
   color: #27b20d;
   width: 245px;
@@ -18,11 +49,27 @@ input{
   border: 2px solid #595766;
   border-radius: 4px;
   padding: 10px;
+  resize: none;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+input {
+  background-color: #474552;
+  color: #27b20d;
+  width: 245px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 2px solid #595766;
+  border-radius: 4px;
+  padding: 10px;
+  vertical-align: top;
+  line-height: 1.5;
 }
 input:focus{
   outline: none;
 }
-textarea {
+#notes {
   width: 500px;
   height: 150px;
   margin-top: 20px;
