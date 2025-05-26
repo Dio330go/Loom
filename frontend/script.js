@@ -4,21 +4,32 @@ function clean_msg() {
   document.getElementById('submit_confirmation').style.transition = "opacity 0.3s linear";
   document.getElementById('submit_confirmation').style.opacity = 0;
 }
-function store_values() {
-  
+function store_values(Name, Date) {
+  fetch('http://localhost:8000/appointments', {
+    method: 'POST',                        // 1. HTTP method: POST (can also be GET, PUT, DELETE, etc.)
+    headers: {
+      'Content-Type': 'application/json', // 2. Tells the server we're sending JSON
+    },
+    body: JSON.stringify({                // 3. Convert a JS object to JSON
+      name: Name,
+      date: Date,
+    }),
+  })
+  .then(response => response.json())    // 4. Parse the response as JSON
+  .then(data => console.log(data))      // 5. Do something with the response
+  .catch(error => console.error(error));// 6. Handle any errors
 }
 
 function submit() {
   const name = document.getElementById('name').value.trim();
-  const date = document.getElementById('date').value.trim();
-
+  const date = document.getElementById('date').value;
   if (name !== "" && date !== "") {
+    store_values(name, date)
     document.getElementById('name').value = '';
     document.getElementById('date').value = '';
     document.getElementById('notes').value = '';
     document.getElementById('submit_confirmation').innerHTML = 'o teu apointment ja ta bue guardado';
     document.getElementById('submit_confirmation').style.color = '#1c9c3e';
-    store_values()
   } else {
     document.getElementById('submit_confirmation').innerHTML = 'prenche bem essa merda';
     document.getElementById('submit_confirmation').style.color = '#dd4a4a';
@@ -29,6 +40,3 @@ function submit() {
   document.getElementById('submit_confirmation').style.opacity = 1;
   timeout = setTimeout(clean_msg, 3000);
 }
-
-
-
