@@ -53,12 +53,10 @@ button:active{
   background-color: green
 }
 p{
-
+  opacity: 1;
+  transition-delay: 3s;
 } 
-@keyframes fadeOut {
-  from {opacity: 1;}
-  to {opacity: 0;}
-}
+
 pre{
   padding: 30px;
   color: #27b20d
