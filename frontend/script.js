@@ -1,9 +1,9 @@
 let timeout;
 
 function clean_msg() {
-  document.getElementById('submit_confirmation').innerHTML = '<br>';
+  document.getElementById('submit_confirmation').style.transition = "opacity 0.3s linear";
+  document.getElementById('submit_confirmation').style.opacity = 0;
 }
-
 function store_values() {
   
 }
@@ -25,6 +25,8 @@ function submit() {
   }
 
   clearTimeout(timeout);
+  document.getElementById('submit_confirmation').style.transition = "none";
+  document.getElementById('submit_confirmation').style.opacity = 1;
   timeout = setTimeout(clean_msg, 3000);
 }
 
