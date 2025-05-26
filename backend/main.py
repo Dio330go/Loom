@@ -6,6 +6,7 @@ from datetime import datetime
 class Appointment(BaseModel):
     name: str
     date: datetime
+    notes: str | None = None
 
     def __str__(self):
         return f"Tens de ir {self.name} às {self.date.strftime('%H:%M')} a {self.date.strftime('%d/%m/%Y')}"
