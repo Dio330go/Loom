@@ -55,3 +55,8 @@ function submit() {
   document.getElementById('submit_confirmation').style.opacity = 1;
   timeout = setTimeout(clean_msg, 3000);
 }
+
+if (document.getElementById("appointment").style.width){
+
+  
+}

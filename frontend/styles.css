@@ -6,8 +6,6 @@ body{
   padding: 25px;
 }
 #header {
-  display: flex;
-  align-items: center; /* Align children vertically */
   font-size: 150%;
   padding-left: 50px;
   position: fixed;
@@ -20,23 +18,34 @@ body{
 }
 
 #open_new_appointment {
-  padding: 5px 10px; /* Adjust padding for better spacing */
-  margin-left: 20px; /* Optional spacing from paragraph */
+  position: absolute;
+  right: 50px;
+  top: -5px;
+  height: 40px;
+  width: 40px;
+  font-size: 100%;
+  padding: 1px 5px; /* Adjust padding for better spacing */
+  margin-right: 20px; /* Optional spacing from paragraph */
   line-height: 1;
 
 }
 #close_new_appointment{
+  position: relative;
+  left: 220px;
+  bottom: 10px;
   padding: 5px 10px; /* Adjust padding for better spacing */
-  margin-left: 20px; /* Optional spacing from paragraph */
+  margin-right: 20px; /* Optional spacing from paragraph */
   line-height: 1;
 }
 #appointments{
-  background-color: #2a292e;
   margin-top: 70px;
+  display: flex;
+  width: min(1400px,80%);
+  flex-wrap: wrap;
+  overflow: visible;
 }
 .appointment{
-  display: inline-block;
-  margin-block: 10px;
+  margin: 10px;
   background-color: #2a292e;
   width: 200px;
   height: 200px;
@@ -45,8 +54,16 @@ body{
   border: 2px solid #595766;
   border-radius: 4px;
   color:#27b20d;
+  transition: width 0.3s;
 }
+.appointment:hover{
+  width: 300px;
+}
+
 #new_appointment{
+  position: fixed;
+  right: 20px;
+  top: 100px;
   display: none;
   align-items: center;
   background-color: #2a292e;
